@@ -1,0 +1,22 @@
+{
+  "name": "zn-apparel",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:api": "npm --workspace apps/api run dev",
+    "build": "npm --workspace apps/api run build && npm --workspace apps/web run build",
+    "start": "concurrently \"npm:start:api\" \"npm:start:web\"",
+    "start:api": "npm --workspace apps/api run start",
+    "start:web": "npm --workspace apps/web run start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
+
