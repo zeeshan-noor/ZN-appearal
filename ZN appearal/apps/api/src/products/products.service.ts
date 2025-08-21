@@ -40,6 +40,7 @@ export class ProductsService {
       price: Number(data.price) || 0,
       imageUrl: data.imageUrl ?? null,
       inStock: data.inStock ?? true,
+      quantity: Number(data.quantity) || 0,
       specs: data.specs ? JSON.stringify(data.specs) : null,
       categoryId: data.categoryId,
     } as const;
@@ -47,6 +48,7 @@ export class ProductsService {
   }
 
   update(id: string, data: any) {
+    console.log('Update data received:', data); // Debug log
     const payload: any = {};
     if (data.name !== undefined) payload.name = data.name;
     if (data.slug !== undefined) payload.slug = data.slug;
@@ -54,8 +56,10 @@ export class ProductsService {
     if (data.price !== undefined) payload.price = Number(data.price) || 0;
     if (data.imageUrl !== undefined) payload.imageUrl = data.imageUrl;
     if (data.inStock !== undefined) payload.inStock = !!data.inStock;
+    if (data.quantity !== undefined) payload.quantity = Number(data.quantity) || 0;
     if (data.specs !== undefined) payload.specs = data.specs ? JSON.stringify(data.specs) : null;
     if (data.categoryId !== undefined) payload.categoryId = data.categoryId;
+    console.log('Update payload:', payload); // Debug log
     return this.prisma.product.update({ where: { id }, data: payload });
   }
 

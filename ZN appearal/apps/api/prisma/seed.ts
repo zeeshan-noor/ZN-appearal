@@ -131,6 +131,9 @@ async function main() {
   ];
 
   for (const p of productData) {
+    // Generate random quantity between 0 and 50 for testing
+    const randomQuantity = Math.floor(Math.random() * 51); // 0 to 50
+    
     await prisma.product.upsert({
       where: { slug: p.slug },
       update: {
@@ -139,6 +142,8 @@ async function main() {
         price: p.price,
         imageUrl: p.imageUrl,
         specs: JSON.stringify(p.specs),
+        quantity: randomQuantity,
+        inStock: randomQuantity > 0, // Set inStock based on quantity
         category: { connect: { slug: p.categorySlug } },
       },
       create: {
@@ -148,6 +153,8 @@ async function main() {
         price: p.price,
         imageUrl: p.imageUrl,
         specs: JSON.stringify(p.specs),
+        quantity: randomQuantity,
+        inStock: randomQuantity > 0, // Set inStock based on quantity
         category: { connect: { slug: p.categorySlug } },
       },
     });
