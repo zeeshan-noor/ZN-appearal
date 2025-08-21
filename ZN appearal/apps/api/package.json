@@ -1,12 +1,12 @@
 {
-  "name": "api",
+  "name": "zn-apparel-api",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "start": "node dist/main.js",
+    "start": "node dist/src/main.js",
     "start:dev": "nest start --watch",
     "dev": "npm run start:dev",
     "lint": "eslint ./src --ext .ts",
