@@ -4,7 +4,11 @@
 - **API URL**: https://postgres-production-9a87.up.railway.app
 - **Status**: ✅ Running successfully
 
-## **Deploy Frontend in 5 Minutes**
+## **⚠️ IMPORTANT: Folder Name Issue**
+
+Your project folder "ZN appearal" contains a space, which causes Vercel deployment issues. Here are the solutions:
+
+## **Solution 1: Deploy from Web Directory (Recommended)**
 
 ### **Step 1: Go to Vercel**
 Visit: https://vercel.com/new
@@ -17,7 +21,7 @@ Visit: https://vercel.com/new
 ### **Step 3: Configure Project**
 Set these settings:
 - **Framework Preset**: `Next.js`
-- **Root Directory**: `apps/web` ⭐ **IMPORTANT**
+- **Root Directory**: `apps/web` ⭐ **CRITICAL**
 - **Build Command**: `npm run build`
 - **Output Directory**: `.next`
 - **Install Command**: `npm install`
@@ -29,6 +33,25 @@ Add this environment variable:
 
 ### **Step 5: Deploy**
 Click "Deploy" and wait for build to complete!
+
+## **Solution 2: Rename Folder (Alternative)**
+
+If Solution 1 doesn't work, rename your project folder:
+1. Rename `ZN appearal` to `zn-apparel` (no spaces)
+2. Then deploy normally
+
+## **Solution 3: Deploy via CLI from Web Directory**
+
+```bash
+# 1. Navigate to web directory
+cd "ZN appearal/apps/web"
+
+# 2. Install Vercel CLI
+npm install -g vercel
+
+# 3. Deploy from web directory
+vercel --prod
+```
 
 ## **Test Your Live Application**
 
@@ -57,5 +80,6 @@ Click "Deploy" and wait for build to complete!
 2. ✅ Root directory: `apps/web`
 3. ✅ Removed problematic functions configuration
 4. ✅ Environment variable: `NEXT_PUBLIC_API_BASE_URL`
+5. ✅ Folder name space issue: Use `apps/web` as root directory
 
 **🎉 Your ZN Apparel e-commerce platform will be live!**
