@@ -30,21 +30,6 @@ Add this environment variable:
 ### **Step 5: Deploy**
 Click "Deploy" and wait for build to complete!
 
-## **Alternative: Deploy from Web Directory**
-
-If the above doesn't work, try this approach:
-
-1. **Go to**: https://vercel.com/new
-2. **Import Repository**: Select your repo
-3. **Settings**:
-   - **Framework**: Next.js
-   - **Root Directory**: `apps/web`
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `.next`
-4. **Environment Variables**:
-   - `NEXT_PUBLIC_API_BASE_URL` = `https://postgres-production-9a87.up.railway.app`
-5. **Deploy**
-
 ## **Test Your Live Application**
 
 ### **Admin Access**
@@ -67,9 +52,10 @@ If the above doesn't work, try this approach:
 
 ## **Troubleshooting**
 
-If you get package name errors:
-1. ✅ Package names are now fixed: `zn-apparel`, `zn-apparel-web`, `zn-apparel-api`
-2. ✅ Root directory must be: `apps/web`
-3. ✅ Environment variable must be set correctly
+✅ **Fixed Issues:**
+1. ✅ Package names: `zn-apparel`, `zn-apparel-web`, `zn-apparel-api`
+2. ✅ Root directory: `apps/web`
+3. ✅ Removed problematic functions configuration
+4. ✅ Environment variable: `NEXT_PUBLIC_API_BASE_URL`
 
 **🎉 Your ZN Apparel e-commerce platform will be live!**
